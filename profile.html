@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Cobras Connect</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="container nav-content">
+        <div class="logo">Cobras Connect</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="events.html">Events</a>
+            <a href="organizations.html">Organizations</a>
+            <a href="profile.html" class="active">Profile</a>
+        </div>
+    </div>
+</nav>
+
+<section class="profile-hero">
+    <div class="container profile-header-flex">
+        <div class="profile-avatar">
+            <div class="avatar-placeholder">JD</div>
+        </div>
+        <div class="profile-info">
+            <h1>John Doe</h1>
+            <p class="profile-role">BS Information Technology • Freshman</p>
+            <p class="profile-bio">
+                Passionate about coding, open source, and building things that make a difference. 
+                Currently exploring web development and AI technologies.
+            </p>
+            
+            <div class="profile-stats">
+                <div class="stat">
+                    <span class="stat-number">12</span>
+                    <span class="stat-label">Events</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">Orgs</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">45</span>
+                    <span class="stat-label">Connections</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTab(event, 'events')">Events</button>
+            <button class="tab-btn" onclick="switchTab(event, 'orgs')">Organizations</button>
+            <button class="tab-btn" onclick="switchTab(event, 'settings')">Settings</button>
+        </div>
+
+        <div id="events" class="tab-content active">
+            <div class="section-header">
+                <h2>Registered Events</h2>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <h3>Spring Career Fair</h3>
+                    <p>April 10, 2026 • Student Union</p>
+                    <div class="card-image-wrapper">
+                        <img src="images/Hackathon-image.jpg" class="event-image" alt="Event">
+                    </div>
+                    <span class="status-badge registered">Upcoming</span>
+                </div>
+                <div class="card">
+                    <h3>Art Workshop</h3>
+                    <p>March 25, 2026 • Art Building</p>
+                    <div class="card-image-wrapper">
+                        <img src="bg6.jfif" class="event-image" alt="Event">
+                    </div>
+                    <span class="status-badge attended">Attended</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="orgs" class="tab-content">
+            <div class="section-header">
+                <h2>My Organizations</h2>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <div class="org-avatar-circle">A</div>
+                    <h3>Art Collective</h3>
+                    <p><strong>Member</strong> • Active since 2025</p>
+                    <p>Contributing to creative projects and campus exhibitions.</p>
+                </div>
+                <div class="card">
+                    <div class="org-avatar-circle">S</div>
+                    <h3>SWULASTICUS</h3>
+                    <p><strong>Contributor</strong> • Official Publication</p>
+                    <p>Writing articles and contributing to campus journalism.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="settings" class="tab-content">
+            <div class="settings-form">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" class="input-field" value="John Doe">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" class="input-field" value="john.doe@swu.edu">
+                </div>
+                <div class="form-group">
+                    <label>Major</label>
+                    <input type="text" class="input-field" value="Information Technology">
+                </div>
+                <button class="btn btn-primary" style="margin-top:20px; width:100%;">Save Changes</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <p>© 2026 Cobras Connect. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+function switchTab(evt, tabName) {
+    const tabContents = document.querySelectorAll(".tab-content");
+    const tabBtns = document.querySelectorAll(".tab-btn");
+
+    tabContents.forEach(content => content.classList.remove("active"));
+    tabBtns.forEach(btn => btn.classList.remove("active"));
+
+    document.getElementById(tabName).classList.add("active");
+    evt.currentTarget.classList.add("active");
+}
+</script>
+
+</body>
+</html>

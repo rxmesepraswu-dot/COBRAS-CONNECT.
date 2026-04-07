@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cobras Connect - Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="container nav-content">
+        <div class="logo">Cobras Connect</div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="events.html">Events</a>
+            <a href="organizations.html">Organizations</a>
+            <a href="profile.html">Profile</a>
+        </div>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="container hero-content">
+        <h1>Connecting Cobras to Campus Life</h1>
+        <p>Discover what's happening on campus, find your community, and make the most of your student experience.</p>
+        <div class="hero-btns">
+            <a href="events.html" class="btn btn-primary">View Events</a>
+            <a href="organizations.html" class="btn btn-secondary">Join an Org</a>
+        </div>
+    </div>
+</section>
+
+<section class="search-section">
+    <div class="container search-container">
+        <input type="text" placeholder="Search events or organizations..." />
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Upcoming Events</h2>
+            <a href="events.html" class="view-all">View all →</a>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <h3>PHINMA Mundo Granate</h3>
+                <p><strong>August 10, 2026</strong> • West Campus Ballpark</p>
+                <img src="images/mundo-granate.jpg" alt="Mundo Granate" class="event-image">
+                <p>A concert event bringing students together to kickstart the semester with live performances.</p>
+            </div>
+
+            <div class="card">
+                <h3>Hackathon</h3>
+                <p><strong>April 12, 2026</strong> • Merlo Building</p>
+                <img src="images/Hackathon-image.jpg" alt="Hackathon Event" class="event-image">
+                <p>Collaborate to create innovative solutions and projects, fostering teamwork and problem-solving.</p>
+            </div>
+
+            <div class="card">
+                <h3>CITE Event</h3>
+                <p><strong>July 8, 2026</strong> • AZCO</p>
+                <img src="images/CITE.jpg" alt="CITE Event" class="event-image">
+                <p>Showcasing projects and fostering learning in IT and engineering fields through innovation.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section light-bg">
+    <div class="container">
+        <div class="section-header">
+            <h2>Student Organizations</h2>
+            <a href="organizations.html" class="view-all">Browse all →</a>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <div class="card-image-wrapper">
+                    <img src="bg4.jfif" alt="SWULASTICUS" class="event-image">
+                    <div class="org-badge">Journalism</div>
+                </div>
+                <h3>SWULASTICUS</h3>
+                <p class="org-location"><strong>Official Publication</strong> • SWU-PHINMA</p>
+                <p>A platform for campus journalism, news dissemination, and student expression.</p>
+                <button class="btn-outline">Join Organization</button>
+            </div>
+
+            <div class="card">
+                <div class="card-image-wrapper">
+                    <img src="bg5.jfif" alt="Scholarship" class="event-image">
+                    <div class="org-badge">Academic</div>
+                </div>
+                <h3>Internal Scholarship</h3>
+                <p class="org-location"><strong>Merit-Based</strong> • Academic & Professional</p>
+                <p>A program providing financial assistance and fostering excellence in education.</p>
+                <button class="btn-outline">Join Organization</button>
+            </div>
+
+            <div class="card">
+                <div class="card-image-wrapper">
+                    <img src="bg6.jfif" alt="Art Collective" class="event-image">
+                    <div class="org-badge">Creative</div>
+                </div>
+                <h3>Art Collective</h3>
+                <p class="org-location"><strong>Fine Arts</strong> • Creative Community</p>
+                <p>Promoting creativity and artistic development through collaborative projects.</p>
+                <button class="btn-outline">Join Organization</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container footer-content">
+        <p>© 2026 Cobras Connect. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#">Contact</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+    </div>
+</footer>
+
+<div id="toast" class="toast">
+    <div class="toast-content">
+        <span class="toast-icon">✓</span>
+        <div class="toast-message">
+            <span class="text-1">Success!</span>
+            <span class="text-2">Your request to join has been sent.</span>
+        </div>
+    </div>
+    <div class="progress"></div>
+</div>
+
+<script>
+    const joinButtons = document.querySelectorAll('.btn-outline');
+    const toast = document.getElementById('toast');
+    const progress = document.querySelector('.progress');
+
+    joinButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            toast.classList.add('active');
+            progress.classList.add('active');
+
+            setTimeout(() => {
+                toast.classList.remove('active');
+            }, 4000);
+
+            setTimeout(() => {
+                progress.classList.remove('active');
+            }, 4300);
+        });
+    });
+</script>
+
+</body>
+</html>

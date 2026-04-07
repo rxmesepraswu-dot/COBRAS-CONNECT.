@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - Cobras Connect</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="container nav-content">
+        <div class="logo">Cobras Connect</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="events.html" class="active">Events</a>
+            <a href="organizations.html">Organizations</a>
+            <a href="profile.html">Profile</a>
+        </div>
+    </div>
+</nav>
+
+<header class="hero-mini">
+    <div class="container">
+        <h1>Campus Events</h1>
+        <p>Your guide to everything happening at SWU-PHINMA.</p>
+    </div>
+</header>
+
+<main class="section">
+    <div class="container">
+        <div class="grid">
+            
+            <div class="card">
+                <div class="card-image-wrapper clickable" onclick="openEventModal('mundo')">
+                    <img src="images/mundo-granate.jpg" alt="Mundo Granate" class="event-image">
+                </div>
+                <h3>PHINMA Mundo Granate</h3>
+                <p class="event-meta"><strong>Aug 10, 2026</strong> • West Campus</p>
+                <p class="event-brief">The biggest welcome concert of the year featuring live guest artists.</p>
+                <button class="btn-outline" onclick="openEventModal('mundo')">View Details</button>
+            </div>
+
+            <div class="card">
+                <div class="card-image-wrapper clickable" onclick="openEventModal('hackathon')">
+                    <img src="images/Hackathon-image.jpg" alt="Hackathon" class="event-image">
+                </div>
+                <h3>Cobra Hackathon</h3>
+                <p class="event-meta"><strong>Apr 12, 2026</strong> • Merlo Bldg</p>
+                <p class="event-brief">A 24-hour sprint to build innovative tech solutions for campus life.</p>
+                <button class="btn-outline" onclick="openEventModal('hackathon')">View Details</button>
+            </div>
+
+            <div class="card">
+                <div class="card-image-wrapper clickable" onclick="openEventModal('cite')">
+                    <img src="images/CITE.jpg" alt="CITE" class="event-image">
+                </div>
+                <h3>CITE Innovation Expo</h3>
+                <p class="event-meta"><strong>July 8, 2026</strong> • AZCO Hall</p>
+                <p class="event-brief">Witness the best Engineering and IT projects from the graduating class.</p>
+                <button class="btn-outline" onclick="openEventModal('cite')">View Details</button>
+            </div>
+
+        </div>
+    </div>
+</main>
+
+<div id="eventModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div id="modalBody"></div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>© 2026 Cobras Connect. All rights reserved.</p>
+</footer>
+
+<script>
+    const modal = document.getElementById("eventModal");
+    const modalBody = document.getElementById("modalBody");
+    const closeBtn = document.querySelector(".close-modal");
+
+    const eventInfo = {
+        mundo: {
+            title: "Mundo Granate",
+            img: "images/mundo-granate.jpg",
+            details: "Get ready for a night of music and Maroon pride! Includes food stalls, merch booths, and local bands. Gates open at 4:00 PM."
+        },
+        hackathon: {
+            title: "Cobra Hackathon",
+            img: "images/Hackathon-image.jpg",
+            details: "Test your skills! Open to all levels. Form a team of 4 and solve real-world problems. Cash prizes and internship offers await."
+        },
+        cite: {
+            title: "CITE Innovation Expo",
+            img: "images/CITE.jpg",
+            details: "An annual showcase of senior design projects. Great for networking with industry partners and potential employers."
+        }
+    };
+
+    function openEventModal(id) {
+        const item = eventInfo[id];
+        modalBody.innerHTML = `
+            <img src="${item.img}" style="width:100%; border-radius:8px; height:220px; object-fit:cover; margin-bottom:15px;">
+            <h2 style="color:#6b1818; margin-bottom:10px;">${item.title}</h2>
+            <p style="color:#444; line-height:1.6;">${item.details}</p>
+            <button class="btn-primary" style="width:100%; margin-top:20px; border:none; padding:12px; border-radius:5px; background:#6b1818; color:white; cursor:pointer;" onclick="closeModal()">Close Window</button>
+        `;
+        modal.style.display = "flex";
+    }
+
+    function closeModal() { modal.style.display = "none"; }
+    closeBtn.onclick = closeModal;
+    window.onclick = (e) => { if (e.target == modal) closeModal(); };
+</script>
+
+</body>
+</html>
